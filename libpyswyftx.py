@@ -66,7 +66,7 @@ def get_account_balance():
     return get(f"{ROUTE_BASE}{ROUTE_ACC_BALANCES}", headers=HEADERS).json()
 
 def get_withdrawal_limits():
-    """Returns withdrawal limits as a json."""
+    """Returns withdrawal limits as a dictionary."""
     return {key:float(value) for (key, value) in \
         get(f"{ROUTE_BASE}{ROUTE_WITHDRWL_LIMIT}", headers=HEADERS).json()["limits"].items()}
 
